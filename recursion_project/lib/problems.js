@@ -17,7 +17,11 @@
 // lucasNumber(5)   // => 11
 // lucasNumber(9)   // => 76
 function lucasNumber(n) {
+    if ( n === 0 ) return 2;
+    if ( n === 1) return 1;
 
+    let ans = lucasNumber(n - 1) + lucasNumber(n - 2)
+    return ans;
 }
 
 
@@ -33,6 +37,10 @@ function lucasNumber(n) {
 // sumArray([5, 2])         // => 7
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
+    if ( array.length === 0 ) return 0;
+    if ( array.length === 1 ) return array[0];
+
+    return sumArray(array.splice(0, 1)) + sumArray(array)
 
 }
 
