@@ -1,3 +1,4 @@
+require 'byebug'
 # is_palindrome (#9)
 
 def is_palindrome(num)
@@ -8,7 +9,7 @@ def is_palindrome(num)
     end
 end
 
-# Roman to Integer
+# Roman to Integer (#13)
 
 def roman_to_int(s)
     yr = 0
@@ -35,3 +36,30 @@ def roman_to_int(s)
     return yr
 
 end
+
+# longest_common_prefix (#14)
+
+def longest_common_prefix(strs)
+    longest_prefix = []
+
+    return "" if strs.length == 0
+
+    last_idx = strs[0].length - 1
+
+    (0..last_idx).each do |idx|
+        strs.each do |str|
+            if ((str[idx] == longest_prefix[idx]) || (longest_prefix[idx] == nil))
+                longest_prefix[idx] = str[idx]
+            else
+                longest_prefix[idx] = ""
+                return longest_prefix.join("")
+            end
+        end
+    end
+
+    return longest_prefix.join("")
+
+end
+
+print(longest_common_prefix(["flower","flow","flight"]))
+puts
