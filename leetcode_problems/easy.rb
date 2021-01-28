@@ -61,5 +61,21 @@ def longest_common_prefix(strs)
 
 end
 
-print(longest_common_prefix(["flower","flow","flight"]))
-puts
+# valid parantheses
+
+def is_valid(s)
+    stack = [];
+    s.each_char do |bracket|
+        stack_el = stack[-1]
+        if (bracket == "(" || bracket == "[" || bracket == "{")
+            stack.push(bracket)
+        elsif (stack_el == "(" && bracket == ")") || (stack_el == "[" && bracket == "]") || (stack_el == "{" && bracket == "}")
+            stack.pop
+        else
+            return false
+        end
+    end
+
+    stack.empty? ? true : false
+end
+
