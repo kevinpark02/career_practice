@@ -205,6 +205,11 @@ def max_sub_array(nums)
     return max_sum
 end
 
+# Excel Sheet Column Title
+def convert_to_title(n)
+
+end
+
 # Majority Element (#169)
 
 def majority_element(nums)
@@ -217,11 +222,6 @@ def majority_element(nums)
     index = count.values.index(count.values.max)
     return count.keys[index]
 end
-
-print majority_element([3,2,3])
-puts
-print majority_element([2,2,1,1,1,2,2,])
-puts
 
 # Excel Sheet Column Number (#171)
 
