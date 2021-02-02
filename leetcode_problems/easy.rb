@@ -208,9 +208,20 @@ end
 # Majority Element (#169)
 
 def majority_element(nums)
-    
+    count = Hash.new(0)
 
+    nums.each do |num|
+        count[num] += 1
+    end
+    
+    index = count.values.index(count.values.max)
+    return count.keys[index]
 end
+
+print majority_element([3,2,3])
+puts
+print majority_element([2,2,1,1,1,2,2,])
+puts
 
 # Excel Sheet Column Number (#171)
 
