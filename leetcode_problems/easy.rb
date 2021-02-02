@@ -205,15 +205,46 @@ def max_sub_array(nums)
     return max_sum
 end
 
+# Majority Element (#169)
+
+def majority_element(nums)
+    
+
+end
+
+# Excel Sheet Column Number (#171)
+
+def title_to_number(s)
+    alphabet = ("A".."Z").to_a
+    return alphabet.index(s.upcase) + 1 if s.length == 1
+
+    col = 0;
+
+    s.reverse.each_char.with_index do |char, i|
+        if i == 0
+            col += alphabet.index(char.upcase) + 1
+        else
+            col += (26 ** i) * (alphabet.index(char.upcase) + 1)
+        end
+    end
+
+    return col
+end
+
 # Factorial Trailing Zeroes (#172)
 
 def trailing_zeroes(n)
     return 0 if n == 0
 
     num = factorial(n, memo = {})
+    count = 0
 
-    
+    while num % 10 == 0
+        count += 1
+        num /= 10
+    end
 
+    return count
 end
 
 def factorial(n, memo = {})
@@ -224,5 +255,15 @@ def factorial(n, memo = {})
     return memo[n]
 end
 
-print factorial(5, {})
-puts
+def trailing_zeroes(n)
+    return 0 if n == 0
+    count = 0
+    i = 5
+
+    while (n / i >= 1)
+        count += n /i
+        i *= 5
+    end
+
+    return count;
+end
