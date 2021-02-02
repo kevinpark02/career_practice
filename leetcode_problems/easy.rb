@@ -187,5 +187,42 @@ def search_insert(nums, target)
     end
 end
 
-print(search_insert([1], 0))
+# Maximum Subarray (#53)
+
+def max_sub_array(nums)
+    return nums[0] if nums.length == 1
+
+    max_sum = ""
+    last_idx = nums.length - 1
+    (0...last_idx).each do |idx1|
+        (idx1+1..last_idx).each do |idx2|
+            if (max_sum == "" || nums[idx1...idx2].sum >= max_sum)
+                max_sum = nums[idx1...idx2].sum
+            end
+        end
+    end
+
+    return max_sum
+end
+
+# Factorial Trailing Zeroes (#172)
+
+def trailing_zeroes(n)
+    return 0 if n == 0
+
+    num = factorial(n, memo = {})
+
+    
+
+end
+
+def factorial(n, memo = {})
+    return memo[n] if (memo[n]) 
+    return 1 if n == 1
+
+    memo[n] = n * factorial(n - 1, memo)
+    return memo[n]
+end
+
+print factorial(5, {})
 puts
