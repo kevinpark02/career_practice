@@ -120,3 +120,9 @@ end
 
 print valid_ip?("14.23.111.255")
 puts
+
+# sum_from_file
+
+def sum_from_file
+    
+end
