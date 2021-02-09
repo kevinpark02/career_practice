@@ -169,7 +169,7 @@ def str_str(haystack, needle)
     end
 end
 
-# Search Insert Position
+# Search Insert Position (#35)
 
 def search_insert(nums, target)
     if nums.include?(target)
@@ -204,6 +204,35 @@ def max_sub_array(nums)
 
     return max_sum
 end
+
+# Length of Last Word (#58)
+
+def length_of_last_word(s)
+    if s.split.length == 0
+        return 0
+    else
+        return s.split[-1].length
+    end
+end
+
+# Plus One (#66)
+
+def plus_one(digits)
+    if digits[-1] != 9
+        digits[-1] += 1
+        digits
+    elsif digits.length == 1 && digits[0] == 9
+        digits = [1, 0]
+        digits
+    else
+        digits[-1] = 0
+        digits[-2] += 1
+        digits
+    end
+end
+
+print plus_one([1,2,3])
+puts
 
 # Excel Sheet Column Title
 def convert_to_title(n)
