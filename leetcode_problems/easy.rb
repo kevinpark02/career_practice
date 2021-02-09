@@ -218,20 +218,20 @@ end
 # Plus One (#66)
 
 def plus_one(digits)
-    if digits[-1] != 9
-        digits[-1] += 1
-        digits
-    elsif digits.length == 1 && digits[0] == 9
-        digits = [1, 0]
-        digits
-    else
-        digits[-1] = 0
-        digits[-2] += 1
-        digits
+    answer = (digits.join().to_i + 1).to_s.split("").map { |el| el.to_i }
+    if answer.length < digits.length
+        (digits.length - answer.length).times do 
+            answer.unshift(0)
+        end
     end
+    answer
 end
 
-print plus_one([1,2,3])
+print plus_one([0])
+puts
+print plus_one([0,0])
+puts
+print plus_one([0, 0, 0])
 puts
 
 # Excel Sheet Column Title
