@@ -104,3 +104,19 @@ def fibs_rec(num)
 
 end
 
+# 02B
+
+#! valid_ip?
+
+def valid_ip?(ip)
+    ip_parsed = ip.split(".").map{ |el| el.to_i }
+    
+    if ip_parsed.length < 4 || ip_parsed.length > 4
+        false
+    end
+    
+    ip_parsed.all? { |num| num >= 0 && num <= 255 }
+end
+
+print valid_ip?("14.23.111.255")
+puts
