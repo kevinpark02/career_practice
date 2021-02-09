@@ -227,17 +227,12 @@ def plus_one(digits)
     answer
 end
 
-print plus_one([0])
-puts
-print plus_one([0,0])
-puts
-print plus_one([0, 0, 0])
-puts
+# Sqrt(x) (#69)
 
-# Excel Sheet Column Title
-def convert_to_title(n)
-
+def my_sqrt(x)
+    Math.sqrt(x).floor()
 end
+
 
 # Majority Element (#169)
 
