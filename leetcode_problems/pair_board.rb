@@ -40,7 +40,7 @@ end
 
 # 01B
 
-# longest_common_substring
+#! longest_common_substring
 
 def longest_common_substring(str1, str2)
     substrings = []
@@ -72,4 +72,35 @@ def sum_rec(nums)
     return nums[0] + sum_rec(nums[1..-1])
 end
 
-# 
+# 02A
+
+# fibs
+
+def fibs_iter(num)
+    res = []
+    i = 0
+    while i < num
+        if i == 0
+            res << 0
+        elsif i == 1
+            res << 1
+        else
+            res << res[i - 2] + res[i -1]
+        end
+        i += 1
+    end
+    res
+end
+
+def fibs_rec(num)
+    return [] if num == 0
+    return [0] if num == 1
+    return [0, 1] if num == 2
+
+    prev_fib = fibs_rec(num - 1)
+    prev_fib << prev_fib[-1] + prev_fib[-2]
+
+    prev_fib
+
+end
+
